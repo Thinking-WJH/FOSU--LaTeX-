@@ -1,0 +1,141 @@
+\include{settings}
+% 引入设置文档settings.tex(不需修改)
+% 右上方展示你的照片：删除images文件夹中的avatar图片，上传你自己的照片改为avatar.png，其余的别改动。
+\newcommand{\school}{物理与光电工程学院}
+% 改为自己的学院，学院英文名不长的可在中文名后加上，用“|”隔开。
+\newcommand{\contact}{
+    \scriptsize
+    \textcolor{white}{
+        \faEnvelope \quad \href{mailto:youremail@fosu.edu.com}{xxxx@xxxmail.com}
+        \hspace{4em}
+        \faPhone \quad xxx-xxxx-xxxx
+        \hspace{4em}
+        \faGithub \quad \href{https://github.com}{GitHub 项目地址}
+    }
+}
+
+\begin{document}
+
+% 页眉设计
+\begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=north, inner sep=0pt](header) at (current page.north){
+        \includegraphics[width=\paperwidth]{images/header.png}
+    };
+    \node[anchor=west](school_logo) at (header.west){\hspace{0.5cm}};
+    \node[anchor=east](school_name) at(header.east){
+        \textcolor{white}{\textbf{\school}}\hspace{0.5cm}
+    };
+\end{tikzpicture}
+\vspace{-3.5em}
+
+% 页脚设计
+\begin{tikzpicture}[remember picture, overlay]
+    % 页脚图片节点
+    \node[anchor=south, inner sep=0pt](footer) at (current page.south){
+        \includegraphics[width=\paperwidth]{images/footer.png}
+    };
+    % 联系方式节点
+    \node[anchor=center] at (footer.center) {\contact};
+\end{tikzpicture}
+
+% 页面背景水印，佛大官方logo，不需改动，不想要水印整模块删除即可
+\begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.05] at(current page.center){
+        \includegraphics[width=0.7\paperwidth, keepaspectratio]{images/fosu_logo_big.png}
+    };
+\end{tikzpicture}
+
+% 个人信息部分
+\begin{figure}[h]
+    \begin{minipage}{0.82\textwidth}
+        \section{\makebox[\widthof{\faAddressCard}][c]{\color{FOSU_Red}{\faAddressCard}}\quad 个人信息}
+        \begin{tabularx}{\linewidth}{p{\widthof{出生日期:}}Xp{\widthof{政治面貌:}}X}
+            姓\ \ \ \ \ \ \ \ 名: & 你的名字 & 
+            性\ \ \ \ \ \ \ \ 别: & 你的性别  \\
+            出生年月:              & 年月 & 
+            政治面貌:              & 预备党员 \\
+           
+        \end{tabularx}
+    \end{minipage}
+    \hspace{2em}
+    \begin{minipage}{0.12\textwidth}   
+    % 头像照片不需一定正方形，长方形也是自动插入。
+    % 调整0.12可调整图片宽度，但需同步调整上文中的\begin{minipage}{0.82\textwidth}中的0.82需要一增一减
+        \setlength{\fboxsep}{0pt}
+        \doublebox{\includegraphics[width=\linewidth]{images/avatar.png}}
+    \end{minipage}
+
+\end{figure}
+\vspace{-1em}
+
+% 教育背景部分
+\section{\makebox[\widthof{\faGraduationCap}][c]{\color{FOSU_Red}{\faGraduationCap}}\quad 教育背景}
+\vspace{0.5em}
+{\large \textbf{佛山大学}}，本科 \hfill {广东，佛山} \\
+{{\href{https://www.fosu.edu.cn/spoe/}{物理与光电工程学院}}}，专业：光电信息科学与工程 \hfill {2024年9月-2024年9月} \\
+\textbf{主修课程}：物理光学、几何光学、光纤通信、信息光学\ 等。
+
+
+\vspace{0.5em}
+{\large \textbf{佛山大学}}，硕士 \hfill {广东，佛山} \\
+{{\href{https://www.fosu.edu.cn/spoe/}{物理与光电工程学院}}}，专业：光学工程 \hfill {2024年9月-2024年9月} \\
+\textbf{研究方向}：1、2\ 等。
+
+\vspace{0.5em}
+{\large \textbf{佛山大学}}，博士 \hfill {广东，佛山} \\
+{{\href{https://www.fosu.edu.cn/spoe/}{物理与光电工程学院}}}，专业：光学工程 \hfill {2024年9月-2024年9月} \\
+\textbf{研究方向}：1、2\ 等。
+
+% 科研成果部分
+
+\section{\makebox[\widthof{\faGraduationCap}][c]{\color{FOSU_Red}{\faGraduationCap}}\quad 科研成果}
+\vspace{0.5em}
+This is One of Your Paper Published in Conference A. \\
+\textbf{Mingzi Nide}, Daoshi Nide. \hfill 发表于 \textbf{Conference A}（CCF-A类会议）
+
+\vspace{0.5em}
+This is Another Paper. \\
+\textbf{Mingzi Nide}, Shidi Nide, Daoshi Nide. \hfill 发表于 \textbf{Conference B} （CCF-A类会议）
+
+% 项目与教学部分
+
+\section{\makebox[\widthof{\faChalkboardTeacher}][c]{\color{FOSU_Red}{\faChalkboardTeacher}}\quad 项目与教学}
+\vspace{0.5em}
+{\large{\textbf{项目名称}}} \hfill {横向/纵向项目-已完结/进行中}\\
+\textbf{你在项目中扮演的角色} \hfill 2020年9月至2021年9月\\
+项目简介。
+
+\vspace{1em}
+{\large{\textbf{某主题竞赛}}}，主讲/参与 \hfill {2020年夏季}\\
+主要内容：内容1，内容2，内容3\ 等。
+
+\vspace{1em}
+{\large{\textbf{课程名称}}}，助教 \hfill {2021年夏季}\\
+主要内容：内容1，内容2，内容3\ 等。
+
+% 技能部分
+
+% 如果每行的内容不是很多，可以考虑使用 minipage，将内容分列展示
+\begin{minipage}[t]{0.6\textwidth}
+    \section[技能特长]{\makebox[\widthof{\faWrench}][c]{\color{FOSU_Red}{\faWrench}}\quad 技能特长}
+    \begin{itemize}
+    \setlength{\itemsep}{0.5em}
+        \item 英语：取得CET‑4与CET‑6证书；
+        \item 熟练使用 Tensorflow、Pytorch 等深度学习框架。
+        \item 软件：能熟练运用CAD,Python,MATLAB,C++等软件
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.35\textwidth}
+    \section[兴趣爱好]{\makebox[\widthof{\faWrench}][c]{\color{FOSU_Red}{\faStar}}\quad 兴趣爱好}
+    \begin{itemize}
+    \setlength{\itemsep}{0.5em}
+        \item 唱
+        \item 跳
+        \item Rap
+        \item 篮球
+    \end{itemize}
+\end{minipage}
+  
+\end{document}
+
